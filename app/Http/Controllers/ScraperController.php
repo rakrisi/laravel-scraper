@@ -35,7 +35,7 @@ class ScraperController extends Controller
 
         // echo $page->filter('.maincounter-number')->text();
 
-        $page->filter('li > a')->each(function ($item) {
+        $page->filter('.menu-list')->filter('li > a')->each(function ($item) {
             $this->results[$item->attr('href')] = $item->filter('a')->text();
         });
 
